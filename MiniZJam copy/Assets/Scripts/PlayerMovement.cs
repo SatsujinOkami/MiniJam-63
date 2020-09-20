@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
     public Animator anim;
-    [SerializeField] private Collider2D SlideDisableCollider;				// A collider that will be disabled when crouching
+    [SerializeField] private Collider2D SlideDisableCollider;               // A collider that will be disabled when crouching
+
 
     public GameObject player;
+
 
     float horizontalMove = 0f;
     public float runSpeed = 50f;
@@ -252,6 +254,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+ 
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Platform"))
@@ -268,6 +273,8 @@ public class PlayerMovement : MonoBehaviour
             collision.collider.transform.SetParent(null);
         }
     }
+
+    
 
 
 }

@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: f47d89944c7fb452d805e56597213b4f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Stone Age 1.unity
+    guid: e82f4910b78294c3386e1e69d540f9a7
+  - enabled: 1
+    path: Assets/Scenes/Medieval 1.unity
+    guid: 1e0965f2f349e42c98bad42d61350525
+  - enabled: 1
+    path: Assets/Scenes/Disco 1.unity
+    guid: 00b66fe9ae89d4e2dbf8a0722c118304
+  - enabled: 1
+    path: Assets/Scenes/Future 1.unity
+    guid: 3c6ad4c0214e4437381009d697bbfb16
   m_configObjects: {}
