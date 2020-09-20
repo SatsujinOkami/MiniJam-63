@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public CharacterController2D controller;
     public Animator anim;
     [SerializeField] private Collider2D SlideDisableCollider;               // A collider that will be disabled when crouching

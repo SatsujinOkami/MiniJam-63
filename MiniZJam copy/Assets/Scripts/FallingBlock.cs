@@ -19,6 +19,8 @@ public class FallingBlock : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
+            PlatformManager.instance.StartCoroutine("SpawnPlatform",
+                new Vector2(transform.position.x, transform.position.y));
             Invoke("DropPlatform", standTime);
             Destroy(gameObject, destroyTime);
         }

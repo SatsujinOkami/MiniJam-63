@@ -27,6 +27,25 @@ public class EnemyBaseScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Attack();
+        }
+    }
+
+
+    void Attack()
+    {
+        //Damage Player
+
+
+        //Player Knockback
+
+        //Attack animation
+    }
+
     void Die()
     {
         Debug.Log("Enemy ded");

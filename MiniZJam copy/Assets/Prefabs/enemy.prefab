@@ -135,9 +135,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  targetrange: 0
+  targetrange: 0.1
   speed: 3
   attackRange: 0
+  rb: {fileID: 1724490437664954603}
+  moveSpeed: 8
+  inRange: 0
   groundDetection: {fileID: 7295904946028926705}
 --- !u!60 &1724490437664954600
 PolygonCollider2D:
