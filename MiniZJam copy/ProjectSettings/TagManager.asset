@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - Platform
   - Killzone
+  - projectilespawnarea
   layers:
   - Default
   - TransparentFX

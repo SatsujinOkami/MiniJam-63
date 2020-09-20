@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FallingBlock : MonoBehaviour
 {
+    public float standTime;
+    public float destroyTime;
     Rigidbody2D rb;
 
 
@@ -17,8 +19,8 @@ public class FallingBlock : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            Invoke("DropPlatform", 0.5f);
-            Destroy(gameObject, 2f);
+            Invoke("DropPlatform", standTime);
+            Destroy(gameObject, destroyTime);
         }
     }
 
