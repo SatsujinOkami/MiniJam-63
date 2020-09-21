@@ -8,6 +8,7 @@ public class Robot : EnemyBaseScript
     public float moveSpeed;
     public float fireCooldown;
     public GameObject proyectile;
+    public Animator anim;
     bool isDetected;
     bool isFlipped;
     Vector2 endposition;
@@ -34,26 +35,26 @@ public class Robot : EnemyBaseScript
                 transform.eulerAngles = new Vector3(0, 0, 0);
 
             }
+            anim.SetTrigger("isWalking");
             Movement(transform.right);
         } else {
+            anim.SetTrigger("isFiring");
             fireTimer += Time.deltaTime;
             if ( fireTimer > fireCooldown ) {
                 Vector2 pewDir;
                 if ( isFlipped ) {
-                    pewDir = -transform.right;
+                    pewDir = transform.right;
                 }else {
                     pewDir = transform.right;
                 }
-                Instantiate(proyectile, pewDir, Quaternion.identity);
+                Instantiate(proyectile, transform.position, Quaternion.Euler(pewDir));
                 fireTimer = 0;
             }
         }
 
-
     }
     public void Patrol() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.right * 0.5f, transform.right, targetRange);
-        if(hit.collider.gameObject == player ) {
+        if ( Vector2.Distance(player.transform.position,this.transform.position) < targetRange ) {
             isDetected = true;
         } else {
             isDetected = false;
