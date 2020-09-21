@@ -13,6 +13,8 @@ public class EnemyAIPatrol : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed;
+
+    //determine if player is withing detection range
     public bool inRange = false;
     
 
@@ -21,15 +23,19 @@ public class EnemyAIPatrol : MonoBehaviour
     private void Start()
     {
         rb .GetComponent<Rigidbody2D>();
-        playerpos = new Vector3(player.transform.position.x,player.transform.position.y, player.transform.position.z);
     }
 
     private void Update()
     {
         FindTarget();
 
+        playerpos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+
+
         if (inRange == false)
         {
+
+            //Patrolling Script
             transform.Translate(Vector2.right * speed * Time.deltaTime);
 
             RaycastHit2D aiGroundDetect = Physics2D.Raycast(groundDetection.position, Vector2.down, 2f);
@@ -54,11 +60,18 @@ public class EnemyAIPatrol : MonoBehaviour
         
     }
 
-    void fixedUpdate()
+    void FixedUpdate()
     {
         if (inRange == true)
         {
             moveEnemy(movement);
+            if(player.transform.position.x > rb.transform.position.x)
+            {
+                rb.transform.localScale = new Vector3(-1, 1, 1);
+            } else if (player.transform.position.x < rb.transform.position.x)
+            {
+                rb.transform.localScale = new Vector3(1, 1, 1);
+            }
 
         }
     }
@@ -73,9 +86,10 @@ public class EnemyAIPatrol : MonoBehaviour
 
     private void FindTarget()
     {
-        float TargetRange = targetrange;
         if (Vector3.Distance(transform.position, playerpos) < targetrange)
         {
+
+            Debug.Log("Detecting Player");
             //player withing range
             inRange = true;
             Vector2 direction = player.transform.position - transform.position;
