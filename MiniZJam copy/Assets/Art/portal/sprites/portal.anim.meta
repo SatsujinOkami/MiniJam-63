@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:MiniZJam copy/Assets/Art/portal/sprites/portal.anim.meta
 guid: c118234d2be224895a3d8d60dae95675
+=======
+guid: b0b9ae32debc6fd48b2416fae9a2194b
+>>>>>>> 965b945e11024254a5fbf8a677699ee24a982c26:MiniZJam copy/Assets/Art/Robot/Animations/robotto_attack.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
